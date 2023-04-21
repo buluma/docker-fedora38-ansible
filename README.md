@@ -1,8 +1,8 @@
-# Fedora 37 Ansible Test Image
+# Fedora 38 Ansible Test Image
 
-[![CI](https://github.com/buluma/docker-fedora37-ansible/workflows/Build/badge.svg?branch=master&event=push)](https://github.com/buluma/docker-fedora37-ansible/actions?query=workflow%3ABuild) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-fedora37-ansible)](https://hub.docker.com/r/buluma/docker-fedora37-ansible/)
+[![CI](https://github.com/buluma/docker-fedora38-ansible/workflows/Build/badge.svg?branch=master&event=push)](https://github.com/buluma/docker-fedora38-ansible/actions?query=workflow%3ABuild) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-fedora38-ansible)](https://hub.docker.com/r/buluma/docker-fedora38-ansible/)
 
-Fedora 37 Docker container for Ansible playbook and role testing.
+Fedora 38 Docker container for Ansible playbook and role testing.
 
 ## Tags
 
@@ -16,15 +16,15 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
   2. `cd` into this directory.
-  3. Run `docker build -t fedora37-ansible .`
+  3. Run `docker build -t fedora38-ansible .`
 
 > Note: Switch between `master` and `testing` depending on whether you want the extra testing tools present in the resulting image.
 
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
-  2. Pull this image from Docker Hub: `docker pull buluma/docker-fedora37-ansible:latest` (or use the image you built earlier, e.g. `fedora37-ansible:latest`).
-  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host buluma/docker-fedora37-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
+  2. Pull this image from Docker Hub: `docker pull buluma/docker-fedora38-ansible:latest` (or use the image you built earlier, e.g. `fedora38-ansible:latest`).
+  3. Run a container from the image: `docker run --detach --privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host buluma/docker-fedora38-ansible:latest` (to test my Ansible roles, I add in a volume mounted from the current working directory with ``--volume=`pwd`:/etc/ansible/roles/role_under_test:ro``).
   4. Use Ansible inside the container:
     a. `docker exec --tty [container_id] env TERM=xterm ansible --version`
     b. `docker exec --tty [container_id] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml --syntax-check`
